@@ -6,21 +6,20 @@ const SigninScreen = ({ navigation }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     
-    const handleSignin = () => {
-      
-        // Implement signin logic here
-        console.log('Signing in with:', username, password);
-        // Navigate to Home screen after successful signin
-        const isAuthenticated = true; // Replace with actual authentication logic
+    // const handleSignin = () => {  
+    //     // Implement signin logic here
+    //     console.log('Signing in with:', username, password);
+    //     // Navigate to Home screen after successful signin
+    //     const isAuthenticated = true; // Replace with actual authentication logic
 
-        if (isAuthenticated) {
-          // Navigate to the 'Home' screen
-          navigation.navigate('Signup');
-        } else {
-          // Handle authentication failure (show error message, etc.)
-          console.log('Authentication failed');
-        }
-    };
+    //     if (isAuthenticated) {
+    //       // Navigate to the 'Home' screen
+    //      navigation.navigate('MainTabs');
+    //     } else {
+    //       // Handle authentication failure (show error message, etc.)
+    //       console.log('Authentication failed');
+    //     }
+    // };
 
     return (
         <View style={styles.container}>
@@ -38,7 +37,7 @@ const SigninScreen = ({ navigation }) => {
                 value={password}
                 onChangeText={setPassword}
             />
-            <TouchableOpacity style={styles.button} onPress={handleSignin}>
+            <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('MainTabs')}>
                 <Text style={styles.buttonText}>Sign In</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
