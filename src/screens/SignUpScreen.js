@@ -6,12 +6,14 @@ const SignupScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSignup = () => {
-        // Implement signup logic here
-        console.log('Signing up with:', username, email, password);
-        // Navigate to Home screen or SignIn screen after successful signup
-        // navigation.navigate('Signup', { screen: 'home' }); // Change 'Home' to 'Signin' if you navigate to signin screen
-    };
+    // const handleSignup = () => {
+    //     // Implement signup logic here
+    //     console.log('Signing up with:', username, email, password);
+    //     // Navigate to Home screen or SignIn screen after successful signup
+    //     // navigation.navigate('Signup', { screen: 'home' }); // Change 'Home' to 'Signin' if you navigate to signin screen
+    // navigation.navigate('MainTabs');
+    
+    // };
 
     return (
         <View style={styles.container}>
@@ -37,7 +39,7 @@ const SignupScreen = ({ navigation }) => {
                 value={password}
                 onChangeText={setPassword}
             />
-            <TouchableOpacity style={styles.button} onPress={handleSignup}>
+            <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('MainTabs')}>
                 <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
